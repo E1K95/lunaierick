@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nosso Amor</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #000033;
+      color: white;
+      margin: 0;
+      padding: 0;
+      text-align: center;
+    }
+
+    .container {
+      padding: 20px;
+    }
+
+    .carousel {
+      width: 90%;
+      margin: 0 auto;
+      overflow: hidden;
+      border-radius: 15px;
+      position: relative;
+    }
+
+    .carousel-images {
+      display: flex;
+      transition: transform 0.5s ease-in-out;
+    }
+
+    .carousel-images img {
+      width: 100%;
+      flex-shrink: 0;
+    }
+
+    .counter {
+      margin: 20px 0;
+      font-size: 1.5em;
+    }
+
+    .heart {
+      font-size: 2em;
+      color: red;
+    }
+
+    .message {
+      margin: 15px 0;
+      font-size: 1.2em;
+    }
+
+    iframe {
+      margin-top: 15px;
+      width: 90%;
+      height: 200px;
+      border: none;
+    }
+
+    .arrow {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background-color: rgba(0, 0, 0, 0.5);
+      color: white;
+      border: none;
+      font-size: 1.5em;
+      cursor: pointer;
+      padding: 5px 10px;
+      border-radius: 50%;
+    }
+
+    .arrow-left {
+      left: 10px;
+    }
+
+    .arrow-right {
+      right: 10px;
+    }
+  </style>
+</head>
+<body>
+            </div>
+    <iframe 
+      src="https://www.youtube.com/embed/AZ_oJkPj5DU?si=mPdT8xvx_qOIPN85&autoplay=1&mute=1" 
+      allow="autoplay; encrypted-media" 
+      allowfullscreen>
+    </iframe>
+    </div>
+    </div>
+    <div class="counter">
+      Juntos: <span id="time"></span>
+    </div>
+    <div class="heart">❤️</div>
+  <div class="container">
+    <!-- Carrossel de imagens -->
+    <div class="carousel">
+      <div class="carousel-images" id="carouselImages">
+    <img src="https://github.com/E1K95/lunaierick/blob/main/Imagem1.jpg" alt="Foto 1">
+    <img src="https://github.com/E1K95/lunaierick/blob/main/Imagem2.jpg" alt="Foto2">
+</div>
+      <button class="arrow arrow-left" onclick="prevSlide()">&#8249;</button>
+      <button class="arrow arrow-right" onclick="nextSlide()">&#8250;</button>
+    </div>
+    <div class="message">
+      Mais que ontem, menos que amanhã. Assim meu amor por você tem sido. 
+      Feliz nós! 
+      Te amo minha preta ❤️❤️
+  </div>
+
+    <div class="message">
+"Quem encontra uma esposa, encontra algo excelente. Recebeu uma bênção do Senhor."
+Provérbios 18:22
+
+
+
+
+  </div>
+
+  <script>
+    // Cronômetro do relacionamento
+    const startDate = new Date("2016-03-03T15:00:00"); // Data do início do relacionamento
+
+    function updateTimer() {
+      const now = new Date();
+      const diff = now - startDate;
+
+      const years = Math.floor(diff / (1000 * 60 * 60 * 24 * 365));
+      const months = Math.floor((diff % (1000 * 60 * 60 * 24 * 365)) / (1000 * 60 * 60 * 24 * 30));
+      const days = Math.floor((diff % (1000 * 60 * 60 * 24 * 30)) / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+
+      document.getElementById("time").innerText = 
+        `${years} anos, ${months} meses, ${days} dias, ` +
+        `${hours} horas, ${minutes} minutos e ${seconds} segundos`;
+    }
+
+    setInterval(updateTimer, 1000);
+    updateTimer();
+
+    // Carrossel de imagens
+    const carouselImages = document.getElementById('carouselImages');
+    const totalImages = carouselImages.children.length;
+    let index = 0;
+
+    function updateCarousel() {
+      const offset = -index * 100;
+      carouselImages.style.transform = `translateX(${offset}%)`;
+    }
+
+    function nextSlide() {
+      index = (index + 1) % totalImages;
+      updateCarousel();
+    }
+
+    function prevSlide() {
+      index = (index - 1 + totalImages) % totalImages;
+      updateCarousel();
+    }
+
+    // Troca automática de slides a cada 3 segundos
+    setInterval(nextSlide, 3000);
+  </script>
+</body>
+</html>
